@@ -3,7 +3,7 @@
 $PSDefaultParameterValues = @{
     "get-aduser:Properties"="description","office","OfficePhone","msRTCSIP-PrimaryUserAddress","msRTCSIP-Line","MobilePhone","Description","AccountLockoutTime","Title","AccountExpirationDate","EmployeeId","Department";
     "get-adgroup:Properties"="mail","managedby","GroupCategory","GroupScope","DisplayName";
-    "Send-MailMessage:SMTPServer" = "smtp.corporate.ncm";
+    "Send-MailMessage:SMTPServer" = "smtp.corporate.co";
     "get-ciminstance:ClassName"   = "Win32_ComputerSystem";
     "get-help:showwindow"         = $True;
     "get-adcomputer:properties"   = "OperatingSystem";

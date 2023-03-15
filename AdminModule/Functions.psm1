@@ -382,7 +382,7 @@ Function Get-MsolCred ([Switch]$NoSave){
     If( -not (Test-Path $CredPath) ) 
     { 
         Write-Verbose "No saved creds.  Get new creds."
-        $LiveCred = Get-credential -Credential ($env:USERNAME + "@czadd.com") 
+        $LiveCred = Get-credential -Credential ($env:USERNAME + "@company.com") 
         If( ! $NoSave ){ $LiveCred | Export-Clixml $CredPath }
     }
     Else
