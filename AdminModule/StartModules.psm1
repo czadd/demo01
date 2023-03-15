@@ -39,3 +39,5 @@ Function Connect-Compellent{
 }
 
 export-modulemember -function * -variable * -alias * -Cmdlet * 
+
+#comment
