@@ -32,6 +32,7 @@ If( $PsIse ){
             $menuSMAPublishing.SubMenus.Add("_Push (quick)", { Push-Git -Fast } , $Null) # "Ctrl+Alt+f")
             $menuSMAPublishing.SubMenus.Add("_Status", { Get-GitState } , $Null) # "Ctrl+Alt+s")
             $menuSMAPublishing.SubMenus.Add("_Git Log", { Get-GitLog -All } , $Null) 
+            $menuSMAPublishing.SubMenus.Add("_Browse Git History in GUI", { Show-GitHistory } , $Null) 
         }
 }
 
