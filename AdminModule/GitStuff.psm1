@@ -25,10 +25,13 @@ If( $PsIse ){
             $menuSMAPublishing = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add("Git",$null,$null)
             $menuSMAPublishing.SubMenus.Add("_Add all", { Add-GitAll } , $Null)  # "Ctrl+Alt+A")
             $menuSMAPublishing.SubMenus.Add("_Commit", { New-GitCommit } , $null) # "Ctrl+Alt+C")
+            $menuSMAPublishing.SubMenus.Add("_Revert to last commit", { Invoke-GitRevert -All } , $Null) 
+            $menuSMAPublishing.SubMenus.Add("_Reset all changes from remote", { Invoke-GitResetHard } , $Null) 
             $menuSMAPublishing.SubMenus.Add("_Pull", { Get-GitPull } , $Null) # "Ctrl+Alt+P")
             $menuSMAPublishing.SubMenus.Add("_Push", { Push-Git } , $Null) # "Ctrl+Alt+u")
             $menuSMAPublishing.SubMenus.Add("_Push (quick)", { Push-Git -Fast } , $Null) # "Ctrl+Alt+f")
             $menuSMAPublishing.SubMenus.Add("_Status", { Get-GitState } , $Null) # "Ctrl+Alt+s")
+
         }
 }
 
