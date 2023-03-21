@@ -18,4 +18,8 @@ Add-AdminHelp -AliasName sex -Description "Start Exhange Online session" -Exampl
 export-modulemember -function * -variable * -alias * -Cmdlet * 
 
 #comment
+<<<<<<< HEAD
 #comment2
+=======
+#comment two
+>>>>>>> parent of db30289 (Revert "test comment two")
