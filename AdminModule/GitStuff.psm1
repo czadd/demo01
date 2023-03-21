@@ -21,7 +21,7 @@ If( $PsIse ){
         $AddonsMenu = $PsIse.CurrentPowerShellTab.AddOnsMenu
 
         #Standard Git commands on the ISE menu
-        If( -not( $AddonsMenu.Submenus.Where({$_.Displayname -eq 'GIT'}) ) ) {
+        If( -not( $AddonsMenu.Submenus.Where({$_.Displayname -eq 'Git'}) ) ) {
             $menuSMAPublishing = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add("Git",$null,$null)
             $menuSMAPublishing.SubMenus.Add("_Add all", { Add-GitAll } , $Null)  # "Ctrl+Alt+A")
             $menuSMAPublishing.SubMenus.Add("_Commit", { New-GitCommit } , $null) # "Ctrl+Alt+C")
@@ -31,7 +31,7 @@ If( $PsIse ){
             $menuSMAPublishing.SubMenus.Add("_Push", { Push-Git } , $Null) # "Ctrl+Alt+u")
             $menuSMAPublishing.SubMenus.Add("_Push (quick)", { Push-Git -Fast } , $Null) # "Ctrl+Alt+f")
             $menuSMAPublishing.SubMenus.Add("_Status", { Get-GitState } , $Null) # "Ctrl+Alt+s")
-
+            $menuSMAPublishing.SubMenus.Add("_Git Log", { Get-GitLog -All } , $Null) 
         }
 }
 
@@ -62,6 +62,7 @@ Set-Alias gs Write-VcsStatus -Description Git
 
 function Get-GitPrettyLog { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit }
 Set-Alias lsd Get-GitPrettyLog -Description Git
+Set-Alias Get-Gitlog Get-GitPrettyLog -Description Git
 
 function Get-GitPrettyLogNewCommits { git log origin/master..HEAD --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit }
 Set-Alias wtf Get-GitPrettyLogNewCommits -Description Git
