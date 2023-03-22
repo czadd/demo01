@@ -8,3 +8,8 @@ $PSDefaultParameterValues = @{
     "get-help:showwindow"         = $True;
     "get-adcomputer:properties"   = "OperatingSystem";
 }
+
+
+#comments
+#text
+#whatever
